@@ -11,8 +11,19 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Text("Hello, World!")
             Text("Welcome to Sound app")
+            Image("dj").resizable().aspectRatio(contentMode: .fit)
+            HStack {
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Image("record").resizable().aspectRatio(contentMode: .fit)
+                }
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Image("record").resizable().aspectRatio(contentMode: .fit)
+                }
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Image("record").resizable().aspectRatio(contentMode: .fit)
+                }
+            }
         }
     }
 }

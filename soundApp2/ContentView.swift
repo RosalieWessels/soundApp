@@ -16,29 +16,33 @@ struct ContentView: View {
     @State var songs = ["Still Corners - Fireflies.mp3", "Alkaline Trio - Clavicle.mp3", "Blackbird Blackbird - Pure.mp3"]
     
     var body: some View {
-        VStack {
-            Text("Welcome to Sound app")
-            Image("dj").resizable().aspectRatio(contentMode: .fit)
-            HStack {
-                Button(action: {
-                    self.playSound(soundNumber: 1)
-                }) {
-                    Image("record").resizable().aspectRatio(contentMode: .fit)
+        NavigationView {
+            VStack {
+                Text("Welcome to Sound app")
+                Image("dj").resizable().aspectRatio(contentMode: .fit)
+                HStack {
+                    Button(action: {
+                        self.playSound(soundNumber: 1)
+                    }) {
+                        Image("record").resizable().aspectRatio(contentMode: .fit)
+                    }
+                    Button(action: {
+                        self.playSound(soundNumber: 2)
+                    }) {
+                        Image("record").resizable().aspectRatio(contentMode: .fit)
+                    }
+                    Button(action: {
+                        self.playSound(soundNumber: 3)
+                    }) {
+                        Image("record").resizable().aspectRatio(contentMode: .fit)
+                    }
                 }
-                Button(action: {
-                    self.playSound(soundNumber: 2)
-                }) {
-                    Image("record").resizable().aspectRatio(contentMode: .fit)
+                NavigationLink (destination: AboutTheAppView()) {
+                    Text("go to the other screen")
                 }
-                Button(action: {
-                    self.playSound(soundNumber: 3)
-                }) {
-                    Image("record").resizable().aspectRatio(contentMode: .fit)
-                }
-            }
+
+            }.navigationBarTitle("Sound App")
         }
-        
-        
     }
     
     func playSound(soundNumber : Int) {
